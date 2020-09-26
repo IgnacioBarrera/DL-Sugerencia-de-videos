@@ -62,8 +62,8 @@ class Video {
 
 /* CLASES HIJOS */
 class Musica extends Video {
-    constructor(videoMusica){
-        super(videoMusica)
+    constructor(videoMusica,videoPelicula,videoSeries){
+        super(videoMusica,videoPelicula,videoSeries)
     }
     mostrarMusica(a){
         return videosMPS.musicaPU(a);
@@ -71,8 +71,8 @@ class Musica extends Video {
 }
 
 class Pelicula extends Video {
-    constructor(videoPelicula){
-        super(videoPelicula)
+    constructor(videoMusica,videoPelicula,videoSeries){
+        super(videoMusica,videoPelicula,videoSeries)
     }
     mostrarPelicula(b){
         return videosMPS.peliculaPU(b);
@@ -80,8 +80,8 @@ class Pelicula extends Video {
 }
 
 class Serie extends Video {
-    constructor(videoSeries){
-        super(videoSeries)
+    constructor(videoMusica,videoPelicula,videoSeries){
+        super(videoMusica,videoPelicula,videoSeries)
     }
     mostrarSeries(c){
         return videosMPS.seriePU(c);
@@ -89,9 +89,12 @@ class Serie extends Video {
 }
 
 /* INSTANCIAS */
-let musica1 = new Musica(EtiqMusica);
-let pelicula1 = new Pelicula(EtiqPelicula);
-let series1 = new Serie(EtiqSerie);
+let musica1 = new Musica(EtiqMusica,'URL-Pelicula','URL-Serie');
+let pelicula1 = new Pelicula('URL-Musica',EtiqPelicula,'URL-Serie');
+let series1 = new Serie('URL-Musica','URL-Pelicula',EtiqSerie);
+console.log(musica1);
+console.log(pelicula1);
+console.log(series1);
 
 /* EJECUCION INTEGRACION VIDEOS */
 musica1.mostrarMusica(EtiqMusica);
