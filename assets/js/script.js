@@ -49,14 +49,14 @@ class Video {
     get videoSeries(){
         return this._videoSeries;
     }
-    mostrarMusica(a){
-        return videosMPS.musicaPU(a);
+    mostrarMusica(){
+        return videosMPS.musicaPU(this.videoMusica);
     }
-    mostrarPelicula(b){
-        return videosMPS.peliculaPU(b);
+    mostrarPelicula(){
+        return videosMPS.peliculaPU(this.videoPelicula);
     }
-    mostrarSeries(c){
-        return videosMPS.seriePU(c);
+    mostrarSeries(){
+        return videosMPS.seriePU(this.videoSeries);
     }
 };
 
@@ -65,8 +65,8 @@ class Musica extends Video {
     constructor(videoMusica,videoPelicula,videoSeries){
         super(videoMusica,videoPelicula,videoSeries)
     }
-    mostrarMusica(a){
-        return videosMPS.musicaPU(a);
+    mostrarMusica(){
+        return videosMPS.musicaPU(this.videoMusica);
     }
 }
 
@@ -74,8 +74,8 @@ class Pelicula extends Video {
     constructor(videoMusica,videoPelicula,videoSeries){
         super(videoMusica,videoPelicula,videoSeries)
     }
-    mostrarPelicula(b){
-        return videosMPS.peliculaPU(b);
+    mostrarPelicula(){
+        return videosMPS.peliculaPU(this.videoPelicula);
     }
 }
 
@@ -83,8 +83,8 @@ class Serie extends Video {
     constructor(videoMusica,videoPelicula,videoSeries){
         super(videoMusica,videoPelicula,videoSeries)
     }
-    mostrarSeries(c){
-        return videosMPS.seriePU(c);
+    mostrarSeries(){
+        return videosMPS.seriePU(this.videoSeries);
     }
 }
 
@@ -92,11 +92,8 @@ class Serie extends Video {
 let musica1 = new Musica(EtiqMusica,'URL-Pelicula','URL-Serie');
 let pelicula1 = new Pelicula('URL-Musica',EtiqPelicula,'URL-Serie');
 let series1 = new Serie('URL-Musica','URL-Pelicula',EtiqSerie);
-console.log(musica1);
-console.log(pelicula1);
-console.log(series1);
 
 /* EJECUCION INTEGRACION VIDEOS */
-musica1.mostrarMusica(EtiqMusica);
-pelicula1.mostrarPelicula(EtiqPelicula);
-series1.mostrarSeries(EtiqSerie);
+musica1.mostrarMusica();
+pelicula1.mostrarPelicula();
+series1.mostrarSeries();
